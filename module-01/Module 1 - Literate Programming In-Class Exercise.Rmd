@@ -150,7 +150,7 @@ test set. Model performance was evaluated by predicting class membership
 predicted probabilities were then used to calculate the ROC for this
 model.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # parameters
 evalStats <- function(...) c(twoClassSummary(...),
                              defaultSummary(...),
@@ -170,14 +170,19 @@ logit <- train(food_desert ~ .,
 summary(logit)
 ```
 
-Data visualization Data visualizations showing a comparison of three of
+# Data visualization
+Data visualizations showing a comparison of three of
 the top important variables in the model were created in order to
 compare the means of those variables in food deserts versus non-food
 deserts. The variable importance plots ranked the following variables at
-the highest importance in the GBM model [Figure 5]: percentage of the
-population that owned their home, percentage of the population that were
-on SNAP benefits, percentage of the population that rented their home,
-percentage of whites. A comparison of these variables by food desert
+the highest importance in the GBM model [Figure 5]:
+
+- percentage of the population that owned their home
+- percentage of the population that were on SNAP benefits
+- percentage of the population that rented their home
+- percentage of whites
+
+A comparison of these variables by food desert
 status seems to confirm much of what has been found in survey-based
 studies in the past. According to Figure 2, the percentage of whites, on
 average, is much higher in non-food deserts compared to food deserts,
@@ -226,7 +231,8 @@ ggplot(SNAP_perc, aes(x = food_desert, y = SNAP_perc)) +
 
 ```
 
-Conclusion The issue of food security is becoming increasingly important
+# Conclusion
+The issue of food security is becoming increasingly important
 to public health practitioners and researchers because of the adverse
 health outcomes and underlying racial disparities that are associated
 with insufficient access to healthy foods. Prior research has used
